@@ -63,36 +63,6 @@
     }
     .nav-links a:hover { opacity: 1; color: var(--amber-light); }
 
-    .hero-banner {
-      background: var(--dark);
-      position: relative;
-      overflow: hidden;
-      padding: 72px 56px 64px;
-      z-index: 1;
-      animation: fadeIn 0.8s ease both;
-    }
-
-    .hero-banner::after {
-      content: '';
-      position: absolute;
-      inset: 0;
-      background: radial-gradient(ellipse at 80% 50%, rgba(200,132,58,0.22) 0%, transparent 65%);
-      pointer-events: none;
-    }
-
-    .hero-bg-text {
-      position: absolute;
-      right: -10px;
-      bottom: -20px;
-      font-family: 'Playfair Display', serif;
-      font-size: 200px;
-      font-weight: 900;
-      color: rgba(255,255,255,0.04);
-      line-height: 1;
-      letter-spacing: -6px;
-      user-select: none;
-      z-index: 0;
-    }
 
     .hero-inner { position: relative; z-index: 2; }
 
@@ -346,14 +316,6 @@
 </head>
 <body>
 
-  <section class="hero-banner">
-    <div class="hero-inner">
-      <div class="tag">✦ Welcome to my space</div>
-      <h1 class="hero-name">Owen<em>s.</em></h1>
-      <p class="hero-role">Student &nbsp;·&nbsp; Creator &nbsp;·&nbsp; Dreamer</p>
-    </div>
-    <div class="hero-bg-text">OWZ</div>
-  </section>
 
   <div class="section-divider">
     <span>About Me</span>
