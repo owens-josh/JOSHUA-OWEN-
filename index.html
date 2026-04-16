@@ -9,7 +9,7 @@
   <style>
     :root {
       --cream:        #f5f0e8;
-      --dark:         #1a1208;
+      --dark:         #1a1919;
       --amber:        #c8843a;
       --amber-light:  #e8a85a;
       --muted:        #6b5e4a;
@@ -27,7 +27,6 @@
       overflow-x: hidden;
     }
 
-    /* ── GRAIN TEXTURE ── */
     body::before {
       content: '';
       position: fixed;
@@ -38,17 +37,6 @@
       opacity: 0.5;
     }
 
-    /* ── HEADER ── */
-    header {
-      background: var(--dark);
-      color: var(--cream);
-      padding: 18px 56px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      position: relative;
-      z-index: 10;
-    }
 
     .site-label {
       font-family: 'Playfair Display', serif;
@@ -75,7 +63,6 @@
     }
     .nav-links a:hover { opacity: 1; color: var(--amber-light); }
 
-    /* ── HERO BANNER ── */
     .hero-banner {
       background: var(--dark);
       position: relative;
@@ -142,7 +129,7 @@
       color: rgba(245,240,232,0.5);
     }
 
-    /* ── SECTION DIVIDER ── */
+
     .section-divider {
       display: flex;
       align-items: center;
@@ -165,7 +152,7 @@
       background: linear-gradient(to right, var(--amber), transparent);
     }
 
-    /* ── ABOUT SECTION ── */
+  
     .about-section {
       padding: 0 56px 56px;
       position: relative;
@@ -173,55 +160,22 @@
       animation: fadeIn 0.8s ease both 0.15s;
     }
 
-    /* clearfix so the section stretches around the floated image */
     .about-body::after {
       content: '';
       display: table;
       clear: both;
     }
 
-    /* ── DROP CAP PHOTO ── */
-    .dropcap-photo {
+    img.dropcap {
       float: left;
-      margin: 4px 34px 18px 0;   /* top right bottom left */
-      width: 210px;
-      height: 210px;
-      border-radius: 14px;
-      overflow: hidden;
-      border: 4px solid var(--amber);
-      box-shadow:
-        8px 8px 0 var(--dark),
-        14px 14px 0 var(--amber-light);
-      flex-shrink: 0;
-      shape-outside: margin-box;
-    }
-
-    .dropcap-photo img {
-      width: 100%;
-      height: 100%;
+      width: 160px;
+      height: 160px;
       object-fit: cover;
-      display: block;
-      filter: sepia(10%) contrast(1.05);
+      border: 3px solid #edeeefe4;
+      border-radius: 6px;
+      margin: 0 22px 10px 0;
     }
 
-    .dropcap-photo .photo-fallback {
-      width: 100%;
-      height: 100%;
-      background: var(--dark);
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      gap: 10px;
-      color: rgba(255,255,255,0.22);
-    }
-
-    .dropcap-photo .photo-fallback i { font-size: 62px; }
-    .dropcap-photo .photo-fallback p {
-      font-size: 10px;
-      letter-spacing: 0.15em;
-      text-transform: uppercase;
-    }
 
     .about-text {
       font-size: 16px;
@@ -229,7 +183,6 @@
       color: var(--muted);
     }
 
-    /* ── TABLE SECTION ── */
     .table-section {
       padding: 0 56px 0;
       position: relative;
@@ -243,7 +196,7 @@
       background: var(--card-bg);
       border-radius: 16px;
       overflow: hidden;
-      box-shadow: 0 4px 28px rgba(0,0,0,0.07);
+      box-shadow: 0 4px 28px rgba(121, 121, 121, 0.911);
       border: 1.5px solid var(--border);
     }
 
@@ -263,7 +216,7 @@
     }
 
     .info-table thead th:last-child {
-      border-left: 1px solid rgba(255,255,255,0.1);
+      border-left: 1px solid rgba(100, 99, 99, 0.909);
     }
 
     .info-table tbody tr {
@@ -299,7 +252,6 @@
       color: var(--amber);
     }
 
-    /* Lists — right column of table */
     .detail-list {
       list-style: none;
       display: flex;
@@ -324,7 +276,6 @@
       flex-shrink: 0;
     }
 
-    /* ── CONTACT BAR — below table ── */
     .contact-section {
       padding: 52px 56px 72px;
       position: relative;
@@ -375,40 +326,16 @@
     .contact-chip.insta i { color: #c13584; }
     .contact-chip:hover i { color: #fff; }
 
-    /* ── FOOTER ── */
-    footer {
-      background: var(--dark);
-      color: rgba(255,255,255,0.35);
-      text-align: center;
-      padding: 28px;
-      font-size: 12px;
-      letter-spacing: 0.1em;
-      position: relative;
-      z-index: 1;
-    }
-
-    footer span { color: var(--amber-light); }
-
-    /* ── ANIMATIONS ── */
     @keyframes fadeIn {
       from { opacity: 0; transform: translateY(18px); }
       to   { opacity: 1; transform: translateY(0); }
     }
 
-    /* ── RESPONSIVE ── */
     @media (max-width: 720px) {
       header, .hero-banner, .about-section,
       .table-section, .contact-section, .section-divider {
         padding-left: 20px;
         padding-right: 20px;
-      }
-
-      .dropcap-photo {
-        float: none;
-        margin: 0 auto 28px;
-        display: block;
-        width: 160px;
-        height: 160px;
       }
 
       .hero-banner { padding: 48px 20px 40px; }
@@ -437,6 +364,7 @@
     <div class="about-body
       <div class="dropcap-photo">
         <img
+          class="dropcap"
           src="Snapchat-1669526358 (2).jpg"
           onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"
         />
@@ -447,22 +375,22 @@
       </div>
 
       <p class="about-text">
-        Hi there! I'm <strong>Agaba Joshua Owenz</strong> — a passionate individual with a genuine curiosity 
+        Hi there! I'm <strong>Agaba Joshua Owenz</strong>, a passionate individual with a genuine curiosity 
         for learning, a love for creativity, and a quiet but steady drive to make a meaningful 
         impact on the world around me. Growing up, I discovered early on that the best way to 
         understand the world is to stay curious, ask questions, and never stop exploring the 
         beautiful complexity of everything around us.
         <br><br>
-        This is my little corner of the internet — a place to share who I am, what I care about, 
+        This is my little corner of the internet, a place to share who I am, what I care about, 
         and where I'm headed. Thanks for stopping by; I hope something here resonates with you. 
-        Welcome! 🌟
+        Welcome!
       </p>
 
     </div>
   </section>
 
   <div class="section-divider">
-    <span>Background &amp; Hobbies</span>
+    <span>Education Background And Hobbies</span>
     <div class="divider-line"></div>
   </div>
 
@@ -470,54 +398,35 @@
     <table class="info-table">
       <thead>
         <tr>
-          <th>Category</th>
-          <th>Details</th>
+          <th>Education Background</th>
+          <th>Hobbies</th>
         </tr>
       </thead>
       <tbody>
-
         <tr>
           <td>
-            <div class="row-label">🎓 Education</div>
-            <div class="row-sub">Academic Background</div>
-          </td>
-          <td>
+           <div class="row-label">🎓 Education</div>
             <ul class="detail-list">
-              <li>Currently pursuing a Bachelor's Degree in Information Technology and Computing</li>
-              <li>Completed Uganda Certificate of Education (UCE) - [Mengo Senior Seccondary School]</li>
-              <li>Completed Uganda Advanced Certificate of Education (UACE) — [Namilyango College]</li>
-              <li>Strong interest in technology, communication &amp; leadership</li>
+            <li>Currently pursuing a Bachelor's Degree in Information Technology and Computing</li>
+            <li>Completed Uganda Certificate of Education (UCE) - [Mengo Senior Seccondary School]</li>
+            <li>Completed Uganda Advanced Certificate of Education (UACE) — [Namilyango College]</li>
             </ul>
           </td>
-        </tr>
-
-        <tr>
           <td>
-            <div class="row-label">🎯 Hobbies</div>
-            <div class="row-sub">What I Love Doing</div>
-          </td>
-          <td>
+             <div class="row-label">🎯 Hobbies</div>
             <ul class="detail-list">
               <li>Photography &amp; visual storytelling</li>
               <li>Listening to music &amp; discovering new artists</li>
               <li>Traveling and exploring new places &amp; cultures</li>
               <li>Watching documentaries and films</li>
             </ul>
-          </td>
-        </tr>
-
-        <tr>
-          <td>
-            <div class="row-label">⚡ Activities</div>
-            <div class="row-sub">Extra-Curricular &amp; Skills</div>
-          </td>
-          <td>
-            <ul class="detail-list">
+             <div class="row-label">⚡ Activities</div>
+             <ul class="detail-list">
               <li>Volunteering with community outreach programs</li>
               <li>Discovering new places &amp; driving long distances </li>
               <li>Participating in football clubs especilly league competitions</li>
               <li>Learning programming, coding &amp; artificial inteligence</li>
-            </ul>
+            </ul> 
           </td>
         </tr>
       </tbody>
